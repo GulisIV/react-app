@@ -1,0 +1,54 @@
+@font-face{
+  font-family:"Proxima Nova W07 Black";
+  src:url("../../static/fonts/Black/ee9e2ec9-258b-445f-9b67-2782963a6701.woff2") format("woff2"),
+  url("../../static/fonts/Black/ae68b448-60de-40f5-992f-621b80f37325.woff") format("woff");
+}
+@font-face{
+  font-family:"Proxima Nova W07 Bold";
+  src:url("../../static/fonts/Bold/6eb2f9f4-cc88-4998-97d8-c1b329f3916d.woff2") format("woff2"),
+  url("../../static/fonts/Bold/49137d03-52ef-47df-b051-ca429fe30a19.woff") format("woff");
+}
+@font-face{
+  font-family:"Proxima Nova W07 Regular";
+  src:url("../../static/fonts/Regular/392aa31e-6adc-4e75-ab48-af30937943da.woff2") format("woff2"),
+  url("../../static/fonts/Regular/1faf79cc-4883-4704-8551-0c754fcf9a69.woff") format("woff");
+}
+@font-face{
+  font-family:"Proxima Nova W07 Semibold";
+  src:url("../../static/fonts/Semibold/7f918574-6fec-49dd-a6e3-8f8799aacc9b.woff2") format("woff2"),
+  url("../../static/fonts/Semibold/1500bfc3-7f1a-4d79-94c5-ee6a1d2c9b5b.woff") format("woff");
+}
+
+.App {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
