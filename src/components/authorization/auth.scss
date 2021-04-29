@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Proxima Nova W07 Bold";
+  src: url("../../static/fonts/Bold/6eb2f9f4-cc88-4998-97d8-c1b329f3916d.woff2") format("woff2"),
+    url("../../static/fonts/Bold/49137d03-52ef-47df-b051-ca429fe30a19.woff") format("woff");
+}
+@font-face {
+  font-family: "Proxima Nova W07 Regular";
+  src: url("../../static/fonts/Regular/392aa31e-6adc-4e75-ab48-af30937943da.woff2") format("woff2"),
+    url("../../static/fonts/Regular/1faf79cc-4883-4704-8551-0c754fcf9a69.woff") format("woff");
+}
+
+// variables
+$error-color-text: #B9345F;
+$error-font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+
+.ui.dimmer {
+  background-color: #E5E5E5;
+}
+.ui.modal>.header {
+  text-align: center;
+  border-bottom: none;
+  font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+  line-height: 36px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+h5.center {
+  color: #6E7191;
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .25px;
+}
+h6.center {
+  color: #6E7191;
+  text-align: center;
+  margin: auto;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+.ui.primary.button.signin-button {
+  margin-bottom: 1em;
+  border-radius: 10px;
+  background-color: #0E57C5;
+  font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.auth__modal-error {
+  font-family: $error-font-family;
+  font-size: 16px;
+  line-height: 20px;
+  color: $error-color-text;
+  text-align: center;
+  margin-top: 24px;
+  min-height: 120px;
+}
+
+a {
+  cursor: pointer;
+}
