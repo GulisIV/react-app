@@ -1,0 +1,752 @@
+@font-face {
+  font-family: "Proxima Nova W07 Bold";
+  src: url("../../static/fonts/Bold/6eb2f9f4-cc88-4998-97d8-c1b329f3916d.woff2") format("woff2"),
+    url("../../static/fonts/Bold/49137d03-52ef-47df-b051-ca429fe30a19.woff") format("woff");
+}
+@font-face {
+  font-family: "Proxima Nova W07 Regular";
+  src: url("../../static/fonts/Regular/392aa31e-6adc-4e75-ab48-af30937943da.woff2") format("woff2"),
+    url("../../static/fonts/Regular/1faf79cc-4883-4704-8551-0c754fcf9a69.woff") format("woff");
+}
+@font-face {
+  font-family: "Proxima Nova W07 Semibold";
+  src: url("../../static/fonts/Semibold/7f918574-6fec-49dd-a6e3-8f8799aacc9b.woff2") format("woff2"),
+    url("../../static/fonts/Semibold/1500bfc3-7f1a-4d79-94c5-ee6a1d2c9b5b.woff") format("woff");
+}
+
+// variables
+$basic-grey: #6e7191;
+$basic-blue: #0e57c5;
+$error-color-border: #ff83ab;
+$error-color-text: #b9345f;
+$button-font-size: 12px;
+$button-font-family: "Proxima Nova W07 Semibold", Helvetica, sans-serif;
+$error-font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+$card-shadow: 0px 8px 16px rgba(17, 17, 17, 0.05);
+
+h3.segment-header {
+  font-family: "Proxima Nova W07 Semibold", Helvetica, sans-serif;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ui.form input.input-basic,
+.ui.form input:not([type]).input-basic:focus,
+.ui.form input[type="passsword"].input-basic {
+  background-color: #eff0f6 !important;
+  border: none;
+  border-radius: 1.2em !important;
+  padding: 2em 1.2em 1.2em 2em;
+  margin-bottom: 0.5em;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+.ui.form input.input-dirty,
+.ui.form input.input-dirty:focus,
+.ui.form input[type="password"].input-dirty {
+  background-color: #eff0f6;
+  border: none;
+  border-radius: 1.2em;
+  padding: 1.5em 2em 0.4em 2em;
+  margin-bottom: 0.5em;
+  font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+}
+.ui.form .field > label.input-label {
+  position: absolute;
+  padding: 0.625em 0 2em 2.5em;
+  color: $basic-grey;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.ui.form input:not([type]).login-basic,
+.ui.form input[type="password"].login-basic {
+  border: 2px solid black;
+  border-radius: 1.2em;
+  padding: 2em 1.2em 1.2em 2em;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+.ui.form input:not([type]).login-dirty,
+.ui.form input[type="password"].login-dirty {
+  border: 2px solid black;
+  border-radius: 1.35em;
+  padding: 2em 0 0.95em 2em;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  font-weight: bold;
+}
+.ui.form .field > label.login-label {
+  position: absolute;
+  padding: 0em 0 2em 1em;
+  color: $basic-grey;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  top: -0.5em;
+}
+
+.ui.form input:not([type]).input-border,
+.ui.form input[type="password"].input-border {
+  border: 2px solid $error-color-border;
+  color: $error-color-text;
+}
+.ui.form textarea:not([rows]).textarea-basic {
+  border: 2px solid black;
+  border-radius: 1.2em;
+  padding-top: 3em;
+  padding-left: 2em;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+}
+.ui.form textarea:not([rows]).textarea-basic {
+  height: 8em;
+  min-height: 6em;
+  max-height: 8em;
+  overflow: hidden;
+  resize: none;
+}
+.ui.form .field > label.textarea-label {
+  position: absolute;
+  padding: 1.5em 0 0 2.6em;
+  color: $basic-grey;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+i.close.icon.textarea-close {
+  float: right;
+  color: $basic-grey;
+}
+
+.ui.segments > .segment.top-border {
+  border-top: none;
+}
+
+.ui.radio.checkbox.radio-field,
+.ui.radio.checkbox.radio-field:checked {
+  text-align: center;
+  color: red;
+}
+.ui.checkbox label:before {
+  border: none;
+}
+
+.ui.grid {
+  margin: 0;
+}
+.ui.grid.filter-grid {
+  border: 1px solid #d6d8e7;
+  border-radius: 16px;
+  background-color: #f7f7fc;
+  margin-top: 48px;
+  color: $basic-grey;
+  text-align: left;
+
+  h5 {
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+.ui.grid.filter-grid {
+  margin-bottom: 32px;
+}
+div.filter-buttons {
+  padding-top: 0.5em;
+}
+
+.ui.large.input.filter-input {
+  width: 100%;
+  max-width: 362px;
+  min-height: 48px;
+  color: #3f8cff;
+}
+
+.ui.icon.button.filter-button {
+  width: 48px;
+  height: 48px;
+  margin: 0 8px 8px;
+  background-color: #fff;
+  color: #3f8cff;
+  border-radius: 16px;
+}
+.ui.button.filter-button {
+  max-width: 62px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+
+  h5 {
+    font-family: "Proxima Nova W07 Semibold", Helvetica, sans-serif;
+    // line-height: 26px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    color: $basic-blue;
+  }
+}
+
+.ui.button.activation__button {
+  margin-right: 18px;
+}
+
+.filter-text {
+  color: #2361bd;
+}
+.ui[class*="vertically divided"].grid > .row:before {
+  width: 0;
+}
+.ui.card .content img.card-image {
+  width: 74px;
+  height: 74px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.ui.card > .extra.card-extra-content {
+  display: flex;
+  border-top: 1px dashed #d6d8e7 !important;
+  text-align: right;
+  font-family: "Proxima Nova W07 Semibold", Helvetica, sans-serif;
+  line-height: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+
+  .ui.button.activate-button {
+    background-color: $basic-blue;
+    color: #f7f7fc;
+    border-radius: 16px;
+    width: 249px;
+    height: 56px;
+    margin: auto;
+    box-shadow: 0px 32px 64px rgba(1, 163, 255, 0.25);
+  }
+
+  .ui.compact.button {
+    margin-top: 0.5em;
+    font-family: $button-font-family;
+  }
+  .activation-info {
+    margin: auto 0 auto auto;
+
+    .activation-header {
+      font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: $basic-grey;
+      margin: 0;
+    }
+
+    .activation-date {
+      font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+      line-height: 26px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.75px;
+      color: #14142b;
+      margin: 0;
+    }
+  }
+  .courses-date {
+    text-align: left;
+    margin: auto;
+
+    .courses-header {
+      font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+      line-height: 100%;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #4e4b66;
+      margin-bottom: 0.5em;
+    }
+
+    .courses-date {
+      font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+      line-height: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #4e4b66;
+    }
+  }
+}
+.ui.card.new-course {
+  background: #fcfcfc;
+  border: 1px dashed $basic-blue;
+  border-radius: 16px;
+  box-shadow: none;
+  width: 303px;
+  height: 193px;
+
+  .content {
+    margin: auto;
+  }
+
+  .new-header {
+    width: 210px;
+    height: 96px;
+    font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+    line-height: 28px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    color: $basic-blue;
+    padding-top: 15%;
+
+    i.plus.icon {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+.ui.card.card-content {
+  border-radius: 16px;
+  box-shadow: $card-shadow;
+  // width: 303px;
+  min-height: 193px;
+}
+.ui.card.add-course {
+  background-color: #f7f7fc !important;
+  border: 1px solid #d6d8e7 !important;
+  width: 303px;
+  height: 224px;
+}
+.ui.card.in-process {
+  background-color: #fff0d4 !important;
+  border: 1px solid #f4b740 !important;
+  .status-button {
+    font-size: $button-font-size;
+    color: #fcfcfc;
+    background-color: #f4b740;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+}
+.ui.card.ready {
+  background-color: #ebfff7 !important;
+  border: 1px solid #6ddfaf !important;
+  .status-button {
+    font-size: $button-font-size;
+    color: #fcfcfc;
+    background-color: #359a70;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+}
+.ui.card.complete {
+  background-color: #e0edff !important;
+  border: 1px solid #3f8cff !important;
+  .status-button {
+    font-size: $button-font-size;
+    color: #fcfcfc;
+    background-color: #3f8cff;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+}
+.ui.card.registration {
+  background-color: #eff0f6 !important;
+  border: 1px solid $basic-grey !important;
+  .status-button {
+    font-size: $button-font-size;
+    color: #fcfcfc;
+    background-color: $basic-grey;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+}
+.ui.compact.button.result-excellent {
+  font-size: $button-font-size;
+  color: #fcfcfc;
+  background-color: #359a70;
+  padding: 8px;
+  border-radius: 8px;
+}
+.ui.compact.button.result-good {
+  font-size: $button-font-size;
+  color: #fcfcfc;
+  background-color: #f4b740;
+  padding: 8px;
+  border-radius: 8px;
+}
+.ui.compact.button.result-satisfactorily {
+  font-size: $button-font-size;
+  color: #fcfcfc;
+  background-color: #b9345f;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.ui.card.game-one {
+  background-color: #f7eeff;
+  border: 1px solid #9a40f4;
+}
+.ui.card.game-two {
+  background-color: #dcf9ff;
+  border: 1px solid #6dcbdf;
+}
+.ui.card.game-three {
+  background-color: #fff6fd;
+  border: 1px solid #ff32c6;
+}
+
+.ui.header.card-content-header {
+  color: #14142b;
+  text-align: left;
+  font-family: "Proxima Nova W07 Semibold", Helvetica, sans-serif;
+  line-height: 26px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ui.card .meta.card-meta {
+  margin-top: 2em;
+  text-align: left;
+  font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+  line-height: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  color: #4e4b66;
+
+  h6 {
+    margin: auto 1em auto 0;
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 100%;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #4e4b66;
+  }
+}
+i.icon.meta-user-icon {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+i.big.icon.icon-align {
+  margin: 0.5em 0.5em 0.5em 1em;
+  color: $basic-grey;
+}
+.p-align {
+  margin-top: 1em;
+  font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+  line-height: 140%;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.ui.dimmer.overlay {
+  background-color: rgba(1, 163, 255, 0.1);
+}
+.ui.message.custom-message {
+  background-color: #ffffff;
+  text-align: left;
+  border-radius: 16px;
+  padding: 1em;
+  color: #14142b;
+
+  .header {
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  p {
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+  }
+}
+.ui.message > .close.icon {
+  right: 1.5em;
+  color: $basic-blue;
+}
+.ui.input.date-input {
+  max-width: 151px;
+  height: 48px;
+}
+.ui.input > input {
+  border-radius: 16px;
+}
+.ui.card.child-info {
+  margin-top: 3em;
+  background-color: #f7f7fc;
+  border-radius: 16px;
+  text-align: left;
+  font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+
+  .content {
+    padding: 24px 24px 0px 24px;
+  }
+  .header:not(.ui) {
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #14142b;
+    padding-bottom: 10px;
+  }
+  .meta {
+    line-height: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4e4b66;
+    padding-bottom: 17px;
+  }
+  .description {
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    padding-bottom: 16px;
+  }
+  .extra {
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 24px;
+    border-top: none !important;
+    font-family: "Proxima Nova W07 Regular", Helvetica, sans-serif;
+    line-height: 100%;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #4e4b66;
+
+    h5 {
+      font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+      line-height: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #4e4b66;
+      padding-left: 10px;
+    }
+  }
+}
+
+.ui.compact.button,
+.ui.compact.buttons .button {
+  padding: 10px 8px;
+  border-radius: 10px;
+}
+
+.panel__card:hover {
+  transform: translateY(0px) !important;
+  box-shadow: inherit !important;
+}
+
+.panel__card-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
+  grid-gap: 32px;
+}
+
+.panel__buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 1rem;
+
+  .panel__buttons-container_button {
+    margin-top: 7px;
+    font-family: $button-font-family;
+  }
+}
+
+.panel__heading-5 {
+  margin-bottom: 7px;
+}
+
+.panel__heading-2 {
+  margin-top: 8px;
+}
+
+.activation__heading-5 {
+  margin-bottom: 7px;
+}
+
+.activation__heading-2 {
+  margin-top: 14px;
+}
+
+.create__switcher {
+  display: flex;
+  margin-left: 56px;
+
+  .create__label {
+    font-family: "Proxima Nova W07 Bold", Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: $basic-grey;
+
+    p {
+      margin: 0 0 0.4em;
+      line-height: 1.4285em;
+    }
+  }
+
+  .male_label {
+    margin-right: 56px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ui.input.date-input {
+    max-width: 100px;
+  }
+  .ui.grid.filter-grid .activation__heading-5 {
+    font-size: 12px;
+  }
+}
+
+.float-label {
+  display: flex;
+  flex-direction: column;
+  min-width: auto;
+  position: relative;
+}
+
+.float-label input {
+  width: 100%;
+  height: 56px;
+  padding: 14px 16px 0 10px;
+  outline: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.float-label label {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 12px;
+  color: #999;
+  pointer-events: none;
+
+  position: absolute;
+  transform: translate(0, 26px) scale(1);
+
+  transform-origin: top left;
+  transition: all 0.2s ease-out;
+}
+
+.float-label:focus-within label {
+  transform: translate(18px, 15px) scale(0.75);
+}
+
+.float-label .active {
+  transform: translate(18px, 15px) scale(0.75);
+}
+
+.input__number-arrows::-webkit-outer-spin-button,
+.input__number-arrows::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ui.form input[type="number"].input__number-arrows {
+  -moz-appearance: textfield;
+}
+
+.input__date-calendar-color {
+  color: transparent !important;
+}
+
+.input__date-calendar::-webkit-inner-spin-button,
+.input__date-calendar::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 27%;
+  right: 10%;
+  //svg used as there https://stackoverflow.com/questions/9185434/using-svg-as-background-image
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%230e57c5%22%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20d%3D%22M148%20288h-40c-6.6%200-12-5.4-12-12v-40c0-6.6%205.4-12%2012-12h40c6.6%200%2012%205.4%2012%2012v40c0%206.6-5.4%2012-12%2012zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6%200-12%205.4-12%2012v40c0%206.6%205.4%2012%2012%2012h40c6.6%200%2012-5.4%2012-12zm96%200v-40c0-6.6-5.4-12-12-12h-40c-6.6%200-12%205.4-12%2012v40c0%206.6%205.4%2012%2012%2012h40c6.6%200%2012-5.4%2012-12zm-96%2096v-40c0-6.6-5.4-12-12-12h-40c-6.6%200-12%205.4-12%2012v40c0%206.6%205.4%2012%2012%2012h40c6.6%200%2012-5.4%2012-12zm-96%200v-40c0-6.6-5.4-12-12-12h-40c-6.6%200-12%205.4-12%2012v40c0%206.6%205.4%2012%2012%2012h40c6.6%200%2012-5.4%2012-12zm192%200v-40c0-6.6-5.4-12-12-12h-40c-6.6%200-12%205.4-12%2012v40c0%206.6%205.4%2012%2012%2012h40c6.6%200%2012-5.4%2012-12zm96-260v352c0%2026.5-21.5%2048-48%2048H48c-26.5%200-48-21.5-48-48V112c0-26.5%2021.5-48%2048-48h48V12c0-6.6%205.4-12%2012-12h40c6.6%200%2012%205.4%2012%2012v52h128V12c0-6.6%205.4-12%2012-12h40c6.6%200%2012%205.4%2012%2012v52h48c26.5%200%2048%2021.5%2048%2048zm-48%20346V160H48v298c0%203.3%202.7%206%206%206h340c3.3%200%206-2.7%206-6z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+}
+
+input[type="radio"] {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $basic-grey;
+}
+input[type="radio"]:checked {
+  background-color: $basic-blue;
+  border: none;
+}
+
+.registration__errors {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registration__errors-field {
+  margin: auto;
+}
+
+.registration__buttons .ui.primary.button.save-button,
+.registration__buttons .ui.button.cancel-button {
+  margin-bottom: 0;
+}
+
+.registration__errors-field {
+  font-family: $error-font-family;
+  font-size: 16px;
+  line-height: 20px;
+  color: $error-color-text;
+  text-align: center;
+  width: 50%;
+}
+
+i.big.icon.color__checked-icon {
+  color: $basic-blue;
+}
